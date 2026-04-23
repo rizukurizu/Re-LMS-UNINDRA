@@ -1,0 +1,247 @@
+/* ==================================================
+   1. CORE VARIABLES & THEME SYSTEM
+   Palet Seamless, Fixed Sidebar, dan Adaptasi Dark Mode
+================================================== */
+:root {
+    --bg-body: #f8fafc; 
+    --bg-card: #ffffff; 
+    --text-main: #0f172a; 
+    --text-muted: #64748b;
+    --border-color: #e2e8f0; 
+    --primary: #3b82f6; 
+    --primary-hover: #2563eb;
+    --sidebar-width: 260px; /* Lebar fixed untuk sidebar */
+    
+    /* Palet Pastel Seamless (Light Mode) */
+    --pastel-blue-bg: #e0f2fe; --pastel-blue-txt: #0284c7;
+    --pastel-purple-bg: #f3e8ff; --pastel-purple-txt: #9333ea;
+    --pastel-green-bg: #dcfce7; --pastel-green-txt: #16a34a;
+    --pastel-orange-bg: #ffedd5; --pastel-orange-txt: #ea580c;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --radius: 16px;
+}
+
+/* Override Dark Mode */
+html[data-theme="dark"], html.dark {
+    --bg-body: #0f172a; 
+    --bg-card: #1e293b; 
+    --text-main: #f8fafc; 
+    --text-muted: #94a3b8;
+    --border-color: #334155; 
+    --primary: #60a5fa;
+
+    /* Palet Pastel Seamless (Dark Mode) - Dibuat sedikit redup / elegan */
+    --pastel-blue-bg: rgba(14, 165, 233, 0.15); --pastel-blue-txt: #38bdf8;
+    --pastel-purple-bg: rgba(168, 85, 247, 0.15); --pastel-purple-txt: #c084fc;
+    --pastel-green-bg: rgba(34, 197, 94, 0.15); --pastel-green-txt: #4ade80;
+    --pastel-orange-bg: rgba(249, 115, 22, 0.15); --pastel-orange-txt: #fb923c;
+    
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================================================
+   2. GLOBAL RESET & TYPOGRAPHY
+================================================== */
+html.rizuki-reborn-active body {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: var(--bg-body) !important;
+    color: var(--text-main) !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+html.rizuki-reborn-active .wrapper,
+html.rizuki-reborn-active .content-wrapper {
+    background-color: var(--bg-body) !important;
+}
+
+/* ==================================================
+   3. SIDEBAR FIXED & LAYOUTING
+================================================== */
+html.rizuki-reborn-active .main-sidebar {
+    width: var(--sidebar-width) !important;
+    background-color: var(--bg-card) !important;
+    border-right: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out !important;
+}
+
+/* Margin konten disesuaikan dengan lebar fixed sidebar */
+html.rizuki-reborn-active .main-header,
+html.rizuki-reborn-active .content-wrapper,
+html.rizuki-reborn-active .main-footer {
+    margin-left: var(--sidebar-width) !important;
+    transition: margin-left 0.3s ease-in-out !important;
+}
+
+/* Ketika Hamburger Menu Di-klik (Collapse) */
+html.rizuki-reborn-active body.sidebar-collapse .main-sidebar {
+    transform: translate(-260px, 0) !important;
+}
+
+html.rizuki-reborn-active body.sidebar-collapse .main-header,
+html.rizuki-reborn-active body.sidebar-collapse .content-wrapper,
+html.rizuki-reborn-active body.sidebar-collapse .main-footer {
+    margin-left: 0 !important;
+}
+
+/* Styling Item Sidebar */
+html.rizuki-reborn-active .sidebar-menu > li > a {
+    border-radius: 10px !important;
+    margin: 4px 12px !important;
+    padding: 12px 15px !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    display: flex !important;
+    align-items: center !important;
+    transition: all 0.2s ease !important;
+}
+
+html.rizuki-reborn-active .sidebar-menu > li:hover > a,
+html.rizuki-reborn-active .sidebar-menu > li.active > a {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+    color: var(--primary) !important;
+    border-left: none !important;
+}
+
+/* Perbaikan Posisi Panah Dropdown Sidebar agar tidak terjepit */
+html.rizuki-reborn-active .sidebar-menu li > a > .pull-right-container {
+    position: absolute !important;
+    right: 25px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+/* ==================================================
+   4. DASHBOARD PASTEL CARDS SEAMLESS
+   Memanggil class yang di-inject dari content.js
+================================================== */
+html.rizuki-reborn-active .reborn-pastel-card {
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius) !important;
+    box-shadow: var(--shadow-sm) !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+html.rizuki-reborn-active .reborn-pastel-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Warna-warni Pastel */
+html.rizuki-reborn-active .reborn-pastel-blue { background-color: var(--pastel-blue-bg) !important; }
+html.rizuki-reborn-active .reborn-pastel-blue .inner h3, html.rizuki-reborn-active .reborn-pastel-blue .inner p { color: var(--pastel-blue-txt) !important; }
+
+html.rizuki-reborn-active .reborn-pastel-purple { background-color: var(--pastel-purple-bg) !important; }
+html.rizuki-reborn-active .reborn-pastel-purple .inner h3, html.rizuki-reborn-active .reborn-pastel-purple .inner p { color: var(--pastel-purple-txt) !important; }
+
+html.rizuki-reborn-active .reborn-pastel-green { background-color: var(--pastel-green-bg) !important; }
+html.rizuki-reborn-active .reborn-pastel-green .inner h3, html.rizuki-reborn-active .reborn-pastel-green .inner p { color: var(--pastel-green-txt) !important; }
+
+html.rizuki-reborn-active .reborn-pastel-orange { background-color: var(--pastel-orange-bg) !important; }
+html.rizuki-reborn-active .reborn-pastel-orange .inner h3, html.rizuki-reborn-active .reborn-pastel-orange .inner p { color: var(--pastel-orange-txt) !important; }
+
+/* ==================================================
+   5. BUG KILLER: TABEL PRESENSI & BOX KONTEN (DARK MODE FIX)
+================================================== */
+html.rizuki-reborn-active .box,
+html.rizuki-reborn-active .box-body,
+html.rizuki-reborn-active .box-header {
+    background-color: var(--bg-card) !important;
+    color: var(--text-main) !important;
+    border: none !important;
+    border-radius: var(--radius) !important;
+}
+
+/* Container utama Box diberikan styling modern */
+html.rizuki-reborn-active .box {
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-sm) !important;
+    margin-bottom: 20px !important;
+}
+
+/* Fix Tabel Presensi agar tidak kedip putih */
+html.rizuki-reborn-active .table-responsive,
+html.rizuki-reborn-active table.table {
+    background-color: transparent !important;
+    color: var(--text-main) !important;
+}
+
+html.rizuki-reborn-active table.table th,
+html.rizuki-reborn-active table.table td {
+    background-color: var(--bg-card) !important;
+    color: var(--text-main) !important;
+    border-color: var(--border-color) !important;
+    vertical-align: middle !important;
+    padding: 12px 15px !important;
+}
+
+/* Tabel Header */
+html.rizuki-reborn-active table.table th {
+    background-color: rgba(59, 130, 246, 0.05) !important; /* Warna header tabel biru super tipis */
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 13px !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Tabel Stripe Fix di Dark Mode */
+html.rizuki-reborn-active table.table-striped > tbody > tr:nth-of-type(odd) td {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+}
+html[data-theme="dark"] table.table-striped > tbody > tr:nth-of-type(odd) td {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Hover Effect Tabel */
+html.rizuki-reborn-active table.table-hover > tbody > tr:hover td {
+    background-color: rgba(59, 130, 246, 0.08) !important;
+}
+
+/* ==================================================
+   6. BREADCRUMBS & LOGIN PAGE (SISA OVERHAUL)
+================================================== */
+html.rizuki-reborn-active .breadcrumb {
+    background: transparent !important;
+    border: 1px dashed var(--border-color) !important;
+    border-radius: 8px !important;
+    padding: 6px 12px !important;
+    display: inline-flex !important;
+}
+
+html.rizuki-reborn-active .breadcrumb > li + li:before {
+    content: "→" !important;
+    color: var(--text-muted) !important;
+    padding: 0 8px !important;
+}
+
+html.rizuki-reborn-active.reborn-login-active body {
+    background: linear-gradient(135deg, #2563eb 0%, #0f172a 100%) !important;
+}
+
+html.rizuki-reborn-active .form-control {
+    background-color: var(--bg-body) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-main) !important;
+    border-radius: 10px !important;
+    padding: 12px 15px !important;
+    height: auto !important;
+    box-shadow: none !important;
+}
+
+html.rizuki-reborn-active .form-control:focus {
+    border-color: var(--primary) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* ==================================================
+   7. CUSTOM SCROLLBAR ELEGAN
+================================================== */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-body); }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
