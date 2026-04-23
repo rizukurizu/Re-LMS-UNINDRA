@@ -70,9 +70,17 @@ Proyek ini sifatnya *open-source*. Jadi kalau lo sesama mahasiswa UNINDRA (atau 
 
 ---
 
-### ⚠️ Disclaimer
+### ⚠️ Disclaimer & Keamanan Privasi (Penting!)
 
-Ekstensi ini dibuat **oleh mahasiswa, untuk mahasiswa**. Proyek ini bersifat **Unofficial** alias tidak terafiliasi resmi dengan pihak UNINDRA. Segala perubahan tampilan hanya terjadi di sisi *browser* pengguna (*Client-side*) dan **tidak mengubah, merusak, atau mengambil data privasi** di server LMS. Aman jaya! 🔒
+Ekstensi ini dibuat **oleh mahasiswa, untuk mahasiswa**. Biar pada nggak *overthinking* soal keamanan data pas makai ekstensi ini, tolong dipahami beberapa poin berikut:
+
+- 🚫 **100% UNOFFICIAL:** Proyek ini **tidak resmi** dan tidak memiliki afiliasi, dukungan, atau kerja sama apa pun dengan pihak Universitas Indraprasta PGRI (UNINDRA) maupun pengembang LMS aslinya.
+- 🔒 **Jalan Full Lokal:** Ekstensi ini murni berjalan di sisi *browser* kalian (*Client-side*). Gue nggak punya server pribadi dan ekstensi ini **sama sekali tidak terhubung ke server eksternal mana pun** selain server LMS itu sendiri.
+- 🍪 **No Tracking & No Cookies:** Ekstensi ini **TIDAK PERNAH** menyimpan *cookies*, mengambil *password*, mencuri *session login*, atau ngintip data akademik kalian. *Script*-nya cuma numpang lewat buat ngerombak visual (HTML/CSS) aja.
+- 🛡️ **Transparan:** Karena ini *open-source*, kodenya bisa dibongkar dan dibaca langsung sama siapa aja di repo ini. Nggak ada *script* gaib yang diselipin.
+- ⚖️ **Do It At Your Own Risk:** Walaupun udah dipastiin aman, gue nggak bertanggung jawab atas segala *error* eksternal dari LMS atau kendala lain selama pemakaian. Gunakan dengan bijak ya!
+
+<br>
 
 <div align="center">
   <p>Dibuat dengan ☕ dan 💻 oleh <a href="https://github.com/rizukurizu">Rizki Fadhilah</a></p>
